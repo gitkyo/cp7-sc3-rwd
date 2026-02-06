@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!-- 
+    Déclaration du DOCTYPE HTML5 - OBLIGATOIRE
+    Cette ligne indique au navigateur qu'il s'agit d'un document HTML5
+    Elle doit toujours être la première ligne du fichier
+-->
+<html lang="fr">
+<!-- 
+    Balise <html> avec l'attribut lang="fr"
+    - C'est l'élément racine de la page
+    - L'attribut lang indique la langue principale du contenu
+    - Important pour l'accessibilité et les moteurs de recherche
+-->
+
+<head>
+    <!-- 
+        Section <head> : Métadonnées de la page
+        Cette section contient toutes les informations sur la page
+        qui ne sont pas affichées directement à l'utilisateur
+    -->
+    
+    <!-- Encodage des caractères en UTF-8 - OBLIGATOIRE -->
+    <!-- Cette ligne doit être parmi les premières du <head> -->
+    <meta charset="UTF-8">
+    
+    <!-- Configuration du viewport pour le responsive design -->
+    <!-- Cette balise permet à la page de s'adapter aux différentes tailles d'écran -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Méta-description pour le SEO -->
+    <!-- Cette description apparaîtra dans les résultats de recherche Google -->
+    <!-- Elle doit être descriptive et attractive (150-160 caractères max) -->
+    <meta name="description" content="Découvrez les bases du HTML dans ce premier article de notre série sur le développement web. Apprenez la structure sémantique et les bonnes pratiques.">
+    
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <!-- Important pour le SEO et l'expérience utilisateur -->
+    <title>Mon Article de Blog - L'Art de Coder</title>
+    
+    <!-- Liaison de la feuille de style CSS -->
+    <!-- Cette balise importe le fichier style.css et applique tous les styles à la page -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 
+        Section <body> : Contenu visible de la page
+        Tout ce qui sera affiché à l'utilisateur se trouve ici
+    -->
+        
+    <!-- EN-TÊTE GLOBAL DU SITE -->
+    <header>
+        <!-- 
+            Balise <header> sémantique
+            - Représente l'en-tête principal du site ou d'une section
+            - Contient généralement le logo, la navigation principale
+            - Une page peut avoir plusieurs <header> mais un seul global
+        -->
+        
+        <!-- Logo du blog avec attribut alt OBLIGATOIRE -->
+        <!-- L'attribut alt est essentiel pour l'accessibilité -->
+        <img src="images/logo-blog.webp" alt="Logo du blog L'Art de Coder - Retour à l'accueil" width="200" >
+
+        <!-- NAVIGATION PRINCIPALE -->
+        <nav>
+            <!-- 
+                Balise <nav> sémantique
+                - Indique une section de navigation
+                - Utilisée pour les menus principaux du site
+                - Améliore l'accessibilité et le SEO
+            -->
+            <ul>
+                <!-- 
+                    Liste non ordonnée pour la navigation
+                    - Structure logique pour les liens de navigation
+                    - Facilite la navigation au clavier
+                -->
+                <li><a href="#" title="Retour à la page d'accueil">Accueil</a></li>
+                <li><a href="#" title="Parcourir les catégories d'articles">Catégories</a></li>
+                <li><a href="#" title="En savoir plus sur nous">À Propos</a></li>
+                <li><a href="#" title="Nous contacter">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+        <h1>Bienvenue sur L'Art de Coder</h1>
+    </section>
+    
+    <!-- CONTENU PRINCIPAL DE LA PAGE -->
+    <main>
+
+        
+        <!-- 
+            Balise <main> sémantique
+            - Représente le contenu principal de la page
+            - Une seule balise <main> par page
+            - Exclut header, footer, navigation secondaire
+        -->
+        
+        <!-- ARTICLE DE BLOG -->
+        <article>
+            <!-- 
+                Balise <article> sémantique
+                - Contenu autonome et réutilisable
+                - Peut être distribué indépendamment
+                - Idéal pour les articles de blog, news, commentaires
+            -->
+            
+            <!-- TITRE PRINCIPAL DE L'ARTICLE -->
+            <h2>L'Art de Coder : Premier Pas en HTML</h2>
+            <!-- 
+                Balise <h1> - Titre principal
+                - Une seule <h1> par page pour le SEO
+                - Doit résumer le contenu principal
+                - Hiérarchie importante : h1 > h2 > h3...
+            -->
+            
+            <!-- INFORMATIONS SUR L'ARTICLE -->
+            <!-- Auteur de l'article -->
+            <p><strong>Par</strong> Marie Dupont</p>
+            <!-- 
+                Utilisation de <strong> pour l'importance sémantique
+                Pas seulement visuel, mais aussi pour les lecteurs d'écran
+            -->
+            
+            <!-- Date de publication -->
+            <p><strong>Publié le</strong> 31 juillet 2025</p>
+            
+            <!-- SECTION INTRODUCTION -->
+            <section>
+                <!-- 
+                    Balise <section> sémantique
+                    - Regroupe un contenu thématique cohérent
+                    - Doit généralement avoir un titre (h2, h3...)
+                    - Alternative à <div> quand le contenu a du sens
+                -->
+                
+                <h2>Introduction au Monde du Web</h2>
+                <!-- 
+                    Balise <h2> - Sous-titre de niveau 2
+                    - Hiérarchie respectée après le <h1>
+                    - Structure logique du document
+                -->
+                
+                <p>
+                    Bienvenue dans le premier article de notre série sur les bases du développement web ! 
+                    Aujourd'hui, nous plongeons dans l'univers fascinant du HTML, le langage fondamental qui 
+                    donne sa structure à chaque page que vous visitez en ligne. Préparez-vous à écrire votre 
+                    première ligne de code !
+                </p>
+                <!-- 
+                    Paragraphe avec le texte d'introduction
+                    - Structure claire et lisible
+                    - Contenu engageant pour le lecteur
+                -->
+            </section>
+            
+            <!-- SECTION LES FONDAMENTAUX -->
+            <section class="section-flex">
+                <div class="content">
+                    <h2>Les Fondamentaux du HTML</h2>
+                    <p>Le HTML, ou HyperText Markup Language...</p>
+                </div>
+                <!-- Image avec srcset et sizes -->
+                <img
+                    src="images/image1.webp"
+                    srcset="
+                        images/image1-small.webp 400w,
+                        images/image1-medium.webp 800w,
+                        images/image1-large.webp 1200w
+                    "
+                    sizes="
+                        (max-width: 767px) 100vw,
+                        (max-width: 1023px) 50vw,
+                        300px
+                    "
+                    alt="Schéma illustrant la structure HTML avec des balises imbriquées et colorées"
+                >
+            </section>
+            
+            <!-- SECTION LA SÉMANTIQUE -->
+            <section>
+                <h2>La Sémantique, C'est Clé !</h2>
+                
+                <p>
+                    Avec HTML5, la sémantique est devenue primordiale. Utiliser des balises sémantiques comme 
+                    <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, ou <code>&lt;article&gt;</code> 
+                    permet de donner du sens à votre contenu, non seulement pour les navigateurs, mais aussi 
+                    pour les moteurs de recherche (SEO) et surtout pour l'accessibilité.
+                </p>
+                <!-- 
+                    Utilisation de <code> pour afficher du code
+                    - Balise sémantique pour le code informatique
+                    - Style monospace par défaut
+                    - &lt; donne le caractère < et &gt; donne le caractère >
+                -->
+                
+                <!-- Liste des balises sémantiques majeures -->
+                <ul>
+                    <!-- 
+                        Liste non ordonnée <ul>
+                        - Pour des éléments sans ordre particulier
+                        - Alternative : <ol> pour une liste ordonnée
+                    -->
+                    <li><code>&lt;header&gt;</code> - En-tête de page ou de section</li>
+                    <li><code>&lt;nav&gt;</code> - Navigation principale ou secondaire</li>
+                    <li><code>&lt;main&gt;</code> - Contenu principal de la page</li>
+                    <li><code>&lt;article&gt;</code> - Contenu autonome et réutilisable</li>
+                    <li><code>&lt;section&gt;</code> - Section thématique de contenu</li>
+                    <li><code>&lt;aside&gt;</code> - Contenu annexe ou sidebar</li>
+                    <li><code>&lt;footer&gt;</code> - Pied de page ou de section</li>
+                </ul>
+                <!-- 
+                    Chaque <li> contient une explication
+                    - Aide à la compréhension des apprenants
+                    - Descriptions courtes et précises
+                -->
+            </section>
+            
+            <!-- SECTION ASTUCES ET BONNES PRATIQUES -->
+            <section class="section-flex">
+                <div class="content">
+                    <h2>Astuces et Bonnes Pratiques</h2>
+                    <p>Pour un code HTML robuste...</p>
+                    <ol>...</ol>
+                </div>
+                <img src="images/image2.webp" alt="Capture d'écran d'un éditeur de code...">
+            </section>
+            
+            <!-- SECTION CONCLUSION -->
+            <section>
+                <h2>Conclusion</h2>
+                
+                <p>
+                    Félicitations ! Vous avez fait vos premiers pas en HTML et compris l'importance de la 
+                    structure sémantique. C'est la fondation sur laquelle nous allons bâtir des pages web 
+                    de plus en plus complexes et interactives. Restez connectés pour la prochaine étape : 
+                    le CSS !
+                </p>
+                <!-- 
+                    Conclusion motivante et perspective d'avenir
+                    - Félicite les apprenants
+                    - Annonce la suite du parcours
+                -->
+            </section>
+            
+        </article>
+    </main>
+    
+    <!-- PIED DE PAGE GLOBAL DU SITE -->
+    <footer>
+        <!-- 
+            Balise <footer> sémantique
+            - Pied de page du site ou d'une section
+            - Contient généralement copyright, liens légaux
+            - Informations complémentaires sur l'auteur/site
+        -->
+        
+        <!-- Copyright -->
+        <p>&copy; 2025 L'Art de Coder. Tous droits réservés.</p>
+        <!-- 
+            Utilisation de l'entité HTML &copy; pour le symbole ©
+            - Plus sémantique que d'écrire (c)
+            - Rendu correct sur tous les navigateurs
+        -->
+        
+        <!-- Lien vers mentions légales -->
+        <p><a href="#" title="Consulter nos mentions légales">Mentions Légales</a></p>
+        <!-- 
+            Lien factice avec title pour l'accessibilité
+            - L'attribut title donne plus d'informations
+            - Aide les utilisateurs de lecteurs d'écran
+        -->
+
+        <!-- code custom depuis codepen : https://codepen.io/PixelPerfectLabs/pen/ogvdGWy -->
+        <a class="playbtn" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Suivez-nous !
+        </a>
+    </footer>
+    
+</body>
+</html>
+
+<!-- 
+    POINTS CLÉS POUR LES APPRENANTS :
+    
+    1. STRUCTURE SÉMANTIQUE
+    - Chaque balise a un sens et un rôle précis
+    - La sémantique améliore l'accessibilité et le SEO
+    - Respecter la hiérarchie des titres (h1 > h2 > h3...)
+    
+    2. ACCESSIBILITÉ
+    - Attribut alt obligatoire pour toutes les images
+    - Attribut lang sur la balise html
+    - Utilisation de title pour les liens
+    - Structure logique avec listes et titres
+    
+    3. SEO ET PERFORMANCE
+    - Une seule balise h1 par page
+    - Méta-description pertinente
+    - Titre de page descriptif
+    - Structure logique du contenu
+    
+    4. BONNES PRATIQUES
+    - Indentation cohérente (2 ou 4 espaces)
+    - Commentaires explicatifs dans le code
+    - Validation W3C régulière
+    - Noms de fichiers et dossiers en minuscules
+    
+    5. HTML5 ET SÉMANTIQUE
+    - Utiliser header, nav, main, article, section, footer
+    - Éviter les div génériques quand possible
+    - Donner du sens au contenu
+    - Structurer logiquement l'information
+-->

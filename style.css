@@ -1,0 +1,349 @@
+/*
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                      FEUILLE DE STYLE CSS - CORRIGÉ                           ║
+║              Mise en place du responsive de la page "Mon Article de Blog"     ║
+║                                                                               ║
+║  Basé sur la CONSIGNE CP7-SC3 - Deuxième Séance CSS                           ║
+║  Cette feuille respecte fidèlement les directives de la consigne.             ║
+║                                                                               ║
+║  Chaque section CSS est numérotée et commentée de manière pédagogique         ║
+║  pour aider les apprenants à comprendre chaque propriété CSS.                 ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+*/
+
+
+html {
+  font-size: 16px; /* Taille de base pour les calculs rem */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 1rem; /* 16px */
+  line-height: 1.6; /* Améliore la lisibilité */
+}
+
+
+h1, h2 {
+  font-family: Georgia, serif;
+  color: #007bff;
+}
+
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+
+/* Header en colonne sur mobile */
+header {
+  display: flex;
+  flex-direction: column; /* Empile les éléments verticalement */
+  align-items: center;
+  padding: 1rem; /* 16px en rem */
+  border-bottom: 1px solid #ccc;
+  gap: 1rem; /* Espace entre le logo et la nav */
+}
+
+header img {
+  max-width: 150px;
+  width: 50%; /* S'adapte sur petits écrans */
+}
+
+
+/* Navigation verticale sur mobile */
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 0.75rem; /* 12px */
+}
+
+nav ul li {
+  list-style: none;
+}
+
+
+
+/* Contenu principal */
+main {
+  padding: 0 1rem; /* Espacement latéral sur mobile */
+  margin: 1.25rem auto; /* 20px en rem */
+}
+
+article {
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+
+/* Sections */
+section {
+  margin-bottom: 2rem; /* 32px */
+}
+
+h1 {
+  font-size: 1.75rem; /* 28px - Plus petit sur mobile */
+}
+
+h2 {
+  font-size: 1.35rem; /* ~22px */
+  margin-bottom: 1rem;
+}
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Footer */
+footer {
+  background-color: #f4f4f4;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+/*
+  UTILITÉ DU :hover :
+  - Cela donne un retour visuel à l'utilisateur
+  - C'est une meilleure expérience utilisateur (UX)
+  - Indique que l'élément est interactif/cliquable
+*/
+
+footer a {
+  color: #333;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* css du bouton personalisé de codepen: https://codepen.io/PixelPerfectLabs/pen/ogvdGWy  */
+.playbtn {
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 40px 0;
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-weight: 600;
+  letter-spacing: 4px;
+  overflow: hidden;
+}
+.playbtn:hover {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 200px #fff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.playbtn span {
+  position: absolute;
+  display: block;
+}
+
+.playbtn span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, transparent, #fff);
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.playbtn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #fff);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.playbtn span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(270deg, transparent, #fff);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.playbtn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #fff);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* 🦸 HERO BANNER RESPONSIVE                                                   */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+.hero-banner {
+  width: 100%;
+  height: 50vh; /* 50% de la hauteur du viewport */
+  min-height: 300px; /* Hauteur minimum */
+  max-height: 600px; /* Hauteur maximum */
+
+  background-image: url('images/hero-banner.webp');
+  background-size: cover; /* Couvre tout l'espace */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texte sur le hero */
+.hero-banner h1 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* 📱➡️💻 MEDIA QUERY TABLETTE (768px et plus)                                 */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 768px) {
+
+  /* Header horizontal sur tablette */
+  header {
+    flex-direction: row; /* Aligne horizontalement */
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+  }
+
+  header img {
+    max-width: 180px;
+    width: auto;
+  }
+
+  /* Navigation horizontale */
+  nav ul {
+    flex-direction: row;
+    gap: 1.5rem; /* 24px entre les liens */
+  }
+
+  /* Contenu principal centré */
+  main {
+    max-width: 720px;
+    padding: 0 2rem;
+  }
+
+  article {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.25rem; /* 36px */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  .hero-banner h1 {
+    font-size: 2.5rem; /* 40px */
+    padding: 0 1rem; /* Espacement horizontal pour les grands écrans */
+  }
+
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* 💻 MEDIA QUERY DESKTOP (1024px et plus)                                     */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+
+  /* Contenu principal plus large */
+  main {
+    max-width: 960px;
+  }
+
+  article {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem; /* 40px */
+  }
+
+  /* Mise en page avancée : texte + image côte à côte */
+  .section-flex {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .section-flex .content {
+    flex: 1; /* Prend l'espace restant */
+  }
+
+  .section-flex img {
+    max-width: 300px;
+    flex-shrink: 0; /* Ne rétrécit pas */
+  }
+
+  .hero-banner h1 {
+    text-shadow: 6px 6px 8px rgba(255, 255, 200, 0.7);
+  }
+
+}
